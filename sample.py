@@ -35,7 +35,7 @@ class WorkBook():
 		except FileNotFoundError:
 			print('Load error: %s not found' % self.filename)
 
-    def get_sheet(self, index=0):
+	def get_sheet(self, index=0):
 		if not self.status:
 			return
 		self.sheet = self.workbook[self.workbook.sheetnames[index]]
@@ -56,7 +56,7 @@ class WorkBook():
 		self.sheet.column_dimensions['B'].width = 40
 		self.sheet.row_dimensions[1].height = 30
 		self.sheet['B3'].font = Font(sz=18,bold=True, italic=True)
-        self.workbook.save(self.filename + '.out.xlsx')
+		self.workbook.save(self.filename + '.out.xlsx')
 
 
 # unit test code below
